@@ -146,6 +146,16 @@ public class HBaseDB {
 		table.put(put);
 		table.close();
 	}
+	public static void add(String tableName, Long rowKey, String family, String qualifier,int value) throws IOException {
+		//连接到table
+//		HTable table = new HTable(TableName.valueOf(tableName), connection);
+		Table table = getConn().getTable(TableName.valueOf(tableName));
+		Put put = new Put(Bytes.toBytes(rowKey));
+//		put.add(Bytes.toBytes(family), Bytes.toBytes(qualifier), Bytes.toBytes(value));
+		put.addColumn(Bytes.toBytes(family), Bytes.toBytes(qualifier), Bytes.toBytes(value));
+		table.put(put);
+		table.close();
+	}
 	public static  void add(String tableName, long rowKey01,long rowKey02, String family, String qualifier, Long value) throws IOException {
 		//连接到table
 //		HTable table = new HTable(TableName.valueOf(tableName), connection);
@@ -199,6 +209,8 @@ public class HBaseDB {
 		table.put(put);
 		table.close();
 	}
+
+
 
 	
 }

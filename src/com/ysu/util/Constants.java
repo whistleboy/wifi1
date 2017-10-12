@@ -45,4 +45,13 @@ public class Constants {
 	public static final String HBASE_PATH_PRE = "hdfs://li:9000/hbase";
 	public static final String HBASE_NAME = "li";
 	
+	//抓取数据以及存储数据的path
+	public static final String PATH_INPUT = "D:\\wifi\\input.txt";
+	public static final String PATH_OUTPUT = "D:\\wifi\\output.txt";
+	
+	//hive
+	public static final String HIVE_URL= "jdbc:hive2://192.168.88.8:10000/default";
+	public static final String HIVE_USER = "li";
+	public static final String HIVE_PASSWORD = "123456";
+	
 }

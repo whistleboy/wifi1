@@ -11,7 +11,7 @@ public class bashshell {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-	}	
+	}
 
 	public static void hadoop2hive() {
 		try {

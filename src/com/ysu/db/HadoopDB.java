@@ -15,10 +15,6 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IOUtils;
 import org.apache.hadoop.util.Progressable;
 import org.springframework.stereotype.Repository;
-
-import com.netpan.model.FileBean;
-import com.netpan.model.User;
-import com.ysu.util.Constants;
 @Repository
 public class HadoopDB {
 

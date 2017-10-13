@@ -9,6 +9,7 @@ import java.sql.Statement;
 import com.ysu.db.HBaseDB;
 import com.ysu.db.HiveDB;
 import com.ysu.model.WifiInfoBean;
+import com.ysu.model.macInfoBean;
 import com.ysu.util.Constants;
 
 public class WifiDao {
@@ -110,8 +111,9 @@ public class WifiDao {
 
 	//手机品牌，解析mac地址前三位
 	public String getPinPai(String mac) {
-		
-		return "";
+		macInfoBean macInfoBean = new macInfoBean();
+		macInfoBean = macDao.getMacInfo(mac);
+		return macInfoBean.getProductor();
 	}
 	
 	//跳出率

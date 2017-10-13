@@ -21,11 +21,9 @@
 <!-- 	<mvc:resources mapping="/scripts/**" location="/scripts/" />
 	<mvc:resources mapping="/images/**" location="/images/" />
 	 -->
-	 
 	 <mvc:resources mapping="/static/**" location="/static/" />
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/" />
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 </beans>

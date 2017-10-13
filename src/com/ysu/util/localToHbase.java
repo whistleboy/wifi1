@@ -7,11 +7,16 @@ import java.io.FileReader;
 import java.io.FileWriter;
 
 import com.ysu.dao.WifiDao;
+import com.ysu.dao.macDao;
 import com.ysu.model.WifiInfoBean;
-import com.ysu.util.Constants;
+import com.ysu.model.macInfoBean;
 
 //读取源数据，过滤，存储，生成日志
 public class localToHbase {
+	
+	public static void main(String[] args) {
+		
+	}
 
 	public static void pickwords(){
 		File file = new File(Constants.PATH_INPUT);
@@ -52,6 +57,32 @@ public class localToHbase {
 				}
 			}
 			bw.close();
+			br.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	//导入mac和厂商对应的hbase，读入文件oui.csv
+	public static void pickMac(){
+		File file = new File(Constants.PATH_MAC_INPUT);
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(file));// 构造一个BufferedReader类来读取文件
+			String s = null;
+			while ((s = br.readLine()) != null) {// 使用readLine方法，一次读一行
+				// 在这切分
+				String[] tmpStr = s.split(",");
+				macInfoBean macInfoBean = new macInfoBean();
+				// 如果是空行，则跳过
+				if(tmpStr.length>3){
+				//封装到macInfoBean
+				String productor="";
+				macInfoBean.setMac(tmpStr[1].substring(0, 1)+":" + tmpStr[1].substring(2, 3)+":"+tmpStr[1].substring(4, 5));
+				macInfoBean.setProductor(tmpStr[2]);
+				// 保存到hbase
+				macDao.insert(macInfoBean);
+				}
+			}
 			br.close();
 		} catch (Exception e) {
 			e.printStackTrace();

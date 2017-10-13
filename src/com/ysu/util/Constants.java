@@ -23,6 +23,7 @@ public class Constants {
 	//定义行健
 	public static final String HBASE_ROW_KEY_WIFIGID_GID = "gid";
 	public static final String HBASE_ROW_KEY_WIFIGID_INFOID = "infoid";
+	public static final String HBASE_ROW_KEY_MACINFO_MAC = "mac";
 	
 	//定义列
 	public static final String HBASE_COLUMN_WIFIGID_GID = "gid";
@@ -36,22 +37,25 @@ public class Constants {
 	public static final String HBASE_COLUMN_WIFIINFO_MAC = "mac";
 	public static final String HBASE_COLUMN_WIFIINFO_WIFINAME = "wifiname";
 	
-	public static final String HBASE_COLUMN_MACINFO_MAC = "mac";
+	public static final String HBASE_COLUMN_MACINFO_PRODUCTOR = "productor";
 	
 	//hdfs路径
-	public static final String PATH_PRE = "hdfs://li:9000";
+	public static final String PATH_PRE = "hdfs://qjx:9000";
 	
 	//HBASE
-	public static final String HBASE_PATH_PRE = "hdfs://li:9000/hbase";
-	public static final String HBASE_NAME = "li";
+	public static final String HBASE_PATH_PRE = "hdfs://qjx:9000/hbase";
+	public static final String HBASE_NAME = "qjx";
 	
 	//抓取数据以及存储数据的path
-	public static final String PATH_INPUT = "D:\\wifi\\input.txt";
-	public static final String PATH_OUTPUT = "D:\\wifi\\output.txt";
+	public static final String PATH_INPUT = "/home/qjx/wifi/input/test.txt";
+	public static final String PATH_OUTPUT = "/home/qjx/wifi/output/output.txt";
+	
+	//  抓取mac地址和厂商对应的数据
+	public static final String PATH_MAC_INPUT = "/home/qjx/wifi/oui.csv";
 	
 	//hive
-	public static final String HIVE_URL= "jdbc:hive2://192.168.88.8:10000/default";
-	public static final String HIVE_USER = "li";
+	public static final String HIVE_URL= "jdbc:hive2://192.168.32.100:10000/default";
+	public static final String HIVE_USER = "qjx";
 	public static final String HIVE_PASSWORD = "123456";
 	
 }

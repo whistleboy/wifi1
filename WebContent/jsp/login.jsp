@@ -77,7 +77,7 @@ function change(){
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<ul class="menu">
-						<!--<li><a href="index.html">Style 1</a></li>
+						<!--<li><a hrefc="index.html">Style 1</a></li>
 						<li><a href="index2.html">Style 2</a></li>-->
 						<li class="active"><a>Wifi Analysis System</a></li>
 					</ul>

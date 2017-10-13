@@ -24,7 +24,7 @@
 	<!-- spring mvc 请求后缀 -->
 	<servlet-mapping>
 		<servlet-name>Dispatcher</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>*.action</url-pattern>
 	</servlet-mapping>
 		<!-- 配置过滤器 -->
 		

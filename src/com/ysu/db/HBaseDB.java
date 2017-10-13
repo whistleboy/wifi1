@@ -210,6 +210,22 @@ public class HBaseDB {
 		table.close();
 	}
 
+	public static void add(String tableName, String rowKey01, String family, String qualifier, String value) throws IOException {
+		//连接到table
+//		HTable table = new HTable(TableName.valueOf(tableName), connection);
+		Table table = getConn().getTable(TableName.valueOf(tableName));
+		Put put = new Put(Bytes.add(Bytes.toBytes(rowKey01), Bytes.toBytes(rowKey01)));
+		if (qualifier!=null) {
+//			put.add(Bytes.toBytes(family), Bytes.toBytes(qualifier), Bytes.toBytes(value));
+			put.addColumn(Bytes.toBytes(family), Bytes.toBytes(qualifier), Bytes.toBytes(value));
+		}else{
+//			put.add(Bytes.toBytes(family), null, Bytes.toBytes(value));
+			put.addColumn(Bytes.toBytes(family), null, Bytes.toBytes(value));
+		}
+		table.put(put);
+		table.close();
+	}
+
 
 
 	
